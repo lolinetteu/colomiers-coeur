@@ -44,18 +44,26 @@
 <script>
     // Charger les images du programme
     const container = document.getElementById('viewer-container');
-    const baseUrl = window.location.href.replace('index.html', '');
+    
+    // Utiliser une URL absolue depuis la racine du repository
+    const baseUrl = new URL('./', import.meta.url || document.currentScript.src).href;
     
     // Afficher les 10 pages du programme
     for (let i = 1; i <= 10; i++) {
         const pageNum = String(i).padStart(4, '0');
         const img = document.createElement('img');
         img.className = 'page-image';
+        img.loading = 'lazy'; // Chargement différé pour meilleures performances
         img.src = baseUrl + `Programme A5-2-1_page-${pageNum}.jpg`;
         img.alt = `Page ${i}`;
+        
+        // Fallback en cas d'erreur
         img.onerror = function() {
-            // Essayer avec .png si .jpg ne fonctionne pas
-            this.src = baseUrl + `Programme A5-2-1_page-${pageNum}.png`;
+            if (!this.dataset.retried) {
+                this.dataset.retried = 'true';
+                // Essayer avec .png si .jpg ne fonctionne pas
+                this.src = baseUrl + `Programme A5-2-1_page-${pageNum}.png`;
+            }
         };
         container.appendChild(img);
     }
