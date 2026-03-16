@@ -5,31 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programme 2026 - Elodie HOBET</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; background: #2c3e50; overflow: hidden; font-family: sans-serif; }
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%; 
+            background: #2c3e50; 
+            overflow-y: auto;
+            font-family: 'Georgia', serif; 
+        }
         header { 
-            background: #004a99; color: white; padding: 12px 20px; 
-            display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3); z-index: 10; position: relative;
+            background: #004a99; 
+            color: white; 
+            padding: 20px; 
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+            z-index: 10; 
+            position: relative;
         }
         #viewer-container { 
             width: 100%; 
-            height: calc(100% - 60px); 
-            position: relative; 
-            overflow-y: auto;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 0;
         }
-        .page-image { 
-            max-width: 100%;
-            height: auto;
-            margin: 10px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        .content-box {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            line-height: 1.8;
+            text-align: justify;
+            font-size: 16px;
+            color: #333;
         }
-        .error-msg { 
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            color: white; text-align: center; width: 80%;
+        .content-box p {
+            margin: 20px 0;
+            text-indent: 2em;
+        }
+        .content-box p:first-child {
+            text-indent: 0;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            #viewer-container {
+                padding: 20px 15px;
+            }
+            .content-box {
+                padding: 30px 20px;
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            #viewer-container {
+                padding: 15px 10px;
+            }
+            .content-box {
+                padding: 25px 15px;
+                font-size: 14px;
+                line-height: 1.6;
+            }
         }
     </style>
 </head>
@@ -39,33 +79,25 @@
     <span><strong>Colomiers à Cœur</strong> - Elodie HOBET 2026</span>
 </header>
 
-<div id="viewer-container"></div>
-
-<script>
-    // Charger les images du programme
-    const container = document.getElementById('viewer-container');
-    
-    // Calculer l'URL de base en supprimant le nom du fichier
-    let baseUrl = window.location.pathname;
-    baseUrl = baseUrl.substring(0, baseUrl.lastIndexOf('/') + 1);
-    
-    // Afficher les 10 pages du programme
-    for (let i = 1; i <= 10; i++) {
-        const pageNum = String(i).padStart(4, '0');
-        const img = document.createElement('img');
-        img.className = 'page-image';
-        img.loading = 'lazy';
-        img.src = baseUrl + 'Programme A5-2-1_page-' + pageNum + '.jpg';
-        img.alt = 'Page ' + i;
-        img.onerror = function() {
-            if (!this.dataset.retried) {
-                this.dataset.retried = 'true';
-                this.src = baseUrl + 'Programme A5-2-1_page-' + pageNum + '.png';
-            }
-        };
-        container.appendChild(img);
-    }
-</script>
+<div id="viewer-container">
+    <div class="content-box">
+        <p>Je veux simplement vous dire merci. 🙏</p>
+        
+        <p>Merci à toutes celles et ceux qui nous ont fait confiance. Merci pour vos messages, vos encouragements, vos discussions sur le terrain et pour ces nombreux moments partagés durant cette campagne.</p>
+        
+        <p>Le résultat n'est pas celui que nous espérions, bien sûr. Mais une chose est certaine : nous pouvons être fiers du chemin parcouru ensemble. En très peu de temps, nous avons réussi à rassembler, à échanger et à faire vivre un projet pour notre ville.</p>
+        
+        <p>Cette campagne se termine, mais l'engagement pour notre commune continue.</p>
+        
+        <p>Aujourd'hui, nous serons deux au conseil municipal, Régis Dejean et moi-même. Comptez sur nous pour porter votre voix, vos attentes et les idées que nous avons défendues avec conviction.</p>
+        
+        <p>Au-delà d'un résultat, nous avons surtout créé quelque chose de précieux : une dynamique, une énergie collective et l'envie de construire l'avenir de notre ville autrement.</p>
+        
+        <p>Et cela ne s'arrête pas là.</p>
+        
+        <p>Encore merci à chacune et chacun d'entre vous.<br/>Votre confiance a été ma plus grande force. ❤️</p>
+    </div>
+</div>
 
 </body>
 
