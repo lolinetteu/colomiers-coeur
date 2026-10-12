@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f5f7fb"/>
+      <stop offset="100%" stop-color="#eaf2ff"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#004a99"/>
+      <stop offset="100%" stop-color="#0d6bb8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="110" fill="url(#blue)"/>
+  <text x="70" y="72" fill="#ffffff" font-family="Georgia, serif" font-size="32" font-weight="700">Colomiers à Cœur</text>
+
+  <rect x="70" y="150" width="1060" height="360" rx="22" fill="#ffffff" opacity="0.96"/>
+
+  <text x="110" y="235" fill="#004a99" font-family="Georgia, serif" font-size="52" font-weight="700">
+    École Hélène Boucher
+  </text>
+
+  <text x="110" y="300" fill="#1d2d3b" font-family="Georgia, serif" font-size="34" font-weight="700">
+    NON à la fermeture imposée
+  </text>
+
+  <text x="110" y="350" fill="#1d2d3b" font-family="Georgia, serif" font-size="30" font-weight="500">
+    OUI à la transparence et à la proximité
+  </text>
+
+  <text x="110" y="420" fill="#0f2f4c" font-family="Arial, sans-serif" font-size="24" font-weight="600">
+    Moratoire • concertation • service public de proximité
+  </text>
+
+  <text x="110" y="475" fill="#23435f" font-family="Arial, sans-serif" font-size="24">
+    Élodie Hobet et Colomiers à Cœur mobilisés pour nos enfants
+  </text>
+
+  <rect x="940" y="510" width="160" height="42" rx="8" fill="#004a99"/>
+  <text x="970" y="538" fill="#ffffff" font-family="Arial, sans-serif" font-size="21" font-weight="700">DÉFENDRE</text>
+</svg>
